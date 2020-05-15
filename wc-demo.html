@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <!-- <script src="https://polyfill.io/v3/polyfill.min.js"></script> -->
+    <!-- core-js + regenerator-runtime + webcomponents-loader - required for IE11 and Edge -->
+    <script src="https://unpkg.com/core-js-bundle@3.0.0-beta.3"></script>
+    <script src="https://unpkg.com/regenerator-runtime/runtime.js"></script>
+    <script src="https://unpkg.com/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <!-- production version, optimized for size and speed -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+
+    <script src="dist/wc-comp1.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      {{ message }}
+      <p>Count: {{ count}}</p>
+      <button @click="doIt">Do it</button>
+      <button id="btn2">Btn2</button>
+      <wc-comp1 prop1="qwerty232" @custom-event="alo" />
+    </div>
+    <!-- <wc-comp1 prop1="qwerty232" @custom-event='alo'/> -->
+
+    <script>
+      // Vue.config.ignoredElements = [/^wc-/]
+      var app = new Vue({
+        name: "app",
+        el: "#app",
+        data: {
+          count: 1,
+          message: "Hello Vue!",
+        },
+        methods: {
+          doIt: function () {
+            this.count++;
+          },
+          alo: function (data) {
+            console.log(data);
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

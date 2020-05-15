@@ -1,24 +1,14 @@
-# compile-sfc-into-js
-
-## Project setup
+# Project setup
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## IE11 and Edge friendly Web component creation:
+Command below create Web Component from Comp1.vue
 
-### Compiles and minifies for production
+Comp1.vue must be in ES5! (Transpiling ES5 not implemented yet)
 ```
-npm run build
+npm run wc
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+After creation open wc-demo.html in project root.
+'prebuild' script in package.json is important!!!
